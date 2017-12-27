@@ -32,6 +32,7 @@ else
         8 "Zsh" off
         9 "NodeJS" off
         10 "Wireshark" off
+        11 "Git Flow" off
     )
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
     clear
@@ -112,6 +113,10 @@ else
                 apt install -y wireshark
                 groupadd wireshark
                 usermod -aG wireshark $SUDO_USER
+                ;;
+            11) # Git Flow
+                echo "Installing Git Flow"
+                apt install -y git-flow
                 ;;
         esac
     done
