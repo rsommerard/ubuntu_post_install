@@ -33,6 +33,7 @@ else
         9 "NodeJS" off
         10 "Wireshark" off
         11 "Git Flow" off
+        12 "Android Studio" off
     )
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
     clear
@@ -117,6 +118,12 @@ else
             11) # Git Flow
                 echo "Installing Git Flow"
                 apt install -y git-flow
+                ;;
+            12) # Android Studio
+                echo "Installing Android Studio"
+                add-apt-repository ppa:maarten-fonville/android-studio
+                apt update
+                apt install -y android-studio
                 ;;
         esac
     done
